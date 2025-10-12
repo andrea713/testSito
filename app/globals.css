@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #E3E4E8;  
+  --foreground: #2D2B2B;
+  --secondary: #0f72d4;
 }
+/* #eef0f4 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #171717;
+    --foreground: #ededed;
+    --secondary: #0f72d4;
+  }
+}
+/* #1A1A1A */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  
+  h1, .h1{@apply text-5xl font-semibold leading-snug;}
+  h2, .h2{@apply text-4xl font-semibold leading-snug;}
+  h3, .h3{@apply text-3xl font-semibold leading-snug;}
+  h4, .h4{@apply text-2xl font-semibold leading-snug;}
+  label {@apply block text-sm/6 font-semibold mb-2.5}
+  input{@apply py-2 px-4 border-2 rounded-2xl border-[var(--foreground)]/20 hover:border-[var(--foreground)]/30}
+
+  p, .p{@apply text-lg opacity-50 dark:opacity-70}
+  
+}
+
+.button{@apply px-3 py-1 text-white rounded-3xl bg-[var(--secondary)]}
+
+.material{@apply backdrop-blur-2xl z-40 bg-white/10 dark:bg-black/5}
+
+
+/* * {
+    border: 1px solid red;
+} */
