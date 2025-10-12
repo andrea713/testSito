@@ -1,4 +1,4 @@
-import BgSection from "./layout/bgsection"
+import BgSection from "@/components/layout/bgsection";
 
 
 
