@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from "react";
 
 
@@ -13,17 +14,23 @@ export default function Input({nome, inType, placeholder}: InputProps){
 
     const [input, setInput] = useState("");
 
-    const handleChange = (e:any) => setInput(e.target.value);
+    function Handle(event:any){
+        setInput(event.target.value)
 
+    }
 
     return(
         <div className=" flex flex-col">
             <label>{nome}</label>
             <input 
+                required
+                value={input}
+                onChange={Handle}
                 type={inType}
                 name={nome}
                 placeholder={placeholder}
             />
+            <p> hai scritto {input}</p>
         </div>
     )
 }

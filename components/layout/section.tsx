@@ -17,7 +17,7 @@ export default function Section(
         <section>
             <div className=" relative -z-50 " >
           
-                <div className=" absolute inset-0 max-w-[1920px] -z-40 m-auto">
+                <div>
                     {imgBg}
                 </div>
 

@@ -8,7 +8,7 @@ export default function BgSection(
     }){
 
     return(
-        <div className=" absolute inset-0 max-w-[1920px] -z-40 m-auto">
+        <div className=" absolute inset-0 max-w-[1920px] z-0 m-auto">
             {children}
         </div>
     )
