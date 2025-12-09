@@ -6,6 +6,7 @@ import FadeInText from "@/components/FadeInText";
 import { SlEnergy } from "react-icons/sl";
 import Input from "@/components/ui/input";
 import Preventivo from "@/components/ui/preventivo";
+import Contatti from "./Contatti/page";
 
 
 
@@ -54,8 +55,8 @@ export default function Home() {
                   </FadeInText>
                 </div>
 
-                <Link href={"/Contatti"} className='backdrop-blur-md z-10 py-2 px-4 rounded-2xl border-2 border-white/30 '>
-                  <span className=''>Parlaci del tuo progetto</span>
+                <Link href={"/Contatti"} className='buttonSecondary backdrop-blur-md z-10 py-2 px-4'>
+                  <span>Parlaci del tuo progetto</span>
                 </Link>
 
                 
@@ -65,12 +66,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className=" bg-white/40 dark:bg-white/1">
+      <section className="bg-foreground">
         <div className=" relative -z-50 ">
           <ContentSection>
             <div>
               <FadeInText>
-                <div className=" max-w-2xl  ">
+                <div className=" max-w-2xl">
                   <h2 className=" mb-6">Chi Siamo?</h2>
                     <p className=" max-w-xl">
                       Lo “Studio Tecnico Associato ALL INGEGNERIA”, già “Studio
@@ -146,37 +147,7 @@ export default function Home() {
           </ContentSection>
       </section>
 
-      <section className=" bg-white/40 dark:bg-white/1">
-        <ContentSection>
-          <div>
-            <div className=" max-w-2xl">
-              <h2  className=" mb-6">Progetti</h2>
-              <p className=" max-w-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Numquam accusantium explicabo ad saepe ipsa sed dolorem
-                deserunt, tempore quaerat! Delectus non dolore laudantium
-                necessitatibus quo aut, explicabo tempore iste tenetur?
-              </p>
-            </div>
-          </div>
-        </ContentSection>
-      </section>
-
-      <section className=" bg-white/40 dark:bg-white/1">
-        <ContentSection>
-            <div className=" max-w-2xl flex flex-col items-end">
-              <h2  className=" mb-6">I nostri orari</h2>
-              <p className=" max-w-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Numquam accusantium explicabo ad saepe ipsa sed dolorem
-                deserunt, tempore quaerat! Delectus non dolore laudantium
-                necessitatibus quo aut, explicabo tempore iste tenetur?
-              </p>
-              
-              <Preventivo/>
-            </div>
-        </ContentSection>
-      </section>
+      <Contatti/>
     </div>
   );
 }

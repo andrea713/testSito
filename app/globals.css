@@ -1,23 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  --background: #E3E4E8;  
-  --foreground: #2D2B2B;
+  --background: #E3E4E8;
+
+  --foreground: rgba(0, 0, 0, 0.05);
+  --e-foreground: rgba(0, 0, 0, 0.03);
+  --foregroundborder: rgba(0, 0, 0, 0.1);
+
+  --text: #2D2B2B;
+
   --secondary: #0f72d4;
 }
-/* #eef0f4 */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #171717;
-    --foreground: #ededed;
+
+    --foreground: rgba(255, 255, 255, 0.01);
+    --e-foreground: rgba(255, 255, 255, 0.05);
+    --foregroundborder: rgba(255, 255, 255, 0.1);
+
     --secondary: #0f72d4;
+
+
+    --text: #ededed;
   }
 }
-/* #1A1A1A */
+
 
 @theme inline {
   --color-background: var(--background);
+  
   --color-foreground: var(--foreground);
+  --color-e-foreground: var(--e-foreground);
+  --color-foreground-border: var(--foregroundborder);
+  
+  --color-secondary: var(--secondary)
+
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
@@ -26,9 +45,21 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
-}
+  color: var(--text);
+} 
 
+
+/* REGOLE PERSONALIZZATE */
+@layer components {
+
+  .buttonPrimary{@apply bg-secondary bg-amber-300 text-white}
+  .buttonSecondary{@apply text-[var(--text)] bg-none border-2 border-foreground-border}
+  .buttonCookies{@apply bg-[var(--text)] text-white dark:text-black}
+
+  .material{@apply backdrop-blur-2xl bg-white/10 dark:bg-black/5}
+  .errore{@apply border-red-500/30 bg-red-500/5 text-red-500/70}
+
+}
 @layer utilities {
   .backdrop-blur-2xl {
     -webkit-backdrop-filter: blur(40px);
@@ -44,16 +75,20 @@ body {
   h3, .h3{@apply text-3xl font-semibold leading-snug;}
   h4, .h4{@apply text-2xl font-semibold leading-snug;}
   label {@apply block text-sm/6 font-semibold mb-2.5}
-  input{@apply py-1.5 px-3 border-2 rounded-2xl text-[14px] border-[var(--foreground)]/20 hover:border-[var(--foreground)]/30}
-  textarea{@apply py-1.5 px-3 border-2 rounded-2xl text-[14px] border-[var(--foreground)]/20 hover:border-[var(--foreground)]/30}
+
+  button {@apply cursor-pointer rounded-3xl}
+
+  input, textarea{@apply outline-0 p-2 border-2 rounded-2xl text-sm border-foreground-border hover:border-black/20 dark:hover:border-white/20}
+  input:focus{@apply border-black/30 dark:border-white/30}
+  textarea:focus{@apply border-black/30 dark:border-white/30}
+
 
   p, .p{@apply text-lg opacity-50 dark:opacity-70}
   
 }
 
-.button{@apply px-3 py-1 text-white rounded-3xl }
-/* bg-[var(--secondary)] */
-.material{@apply backdrop-blur-2xl bg-white/10 dark:bg-black/5}
+
+
 
 
 /* * {

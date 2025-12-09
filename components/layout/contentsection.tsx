@@ -10,7 +10,7 @@ export default function ContentSection(
     }){
 
     return(
-        <div className={clsx(" relative max-w-[1400px] m-auto px-6 py-16 md:px-12 md:py-32 z-0", className)}>
+        <div className={clsx(" relative max-w-[1400px] m-auto px-6 py-18 md:px-12 md:py-32 z-0", className)}>
         {children}
         </div>
     )

@@ -1,90 +1,130 @@
 import FadeInText from "@/components/FadeInText";
 import ContentSection from "@/components/layout/contentsection";
+import Prenotazione from "@/components/ui/prenotazione";
 import Preventivo from "@/components/ui/preventivo";
-import { SlEnergy } from "react-icons/sl";
+import { infoStudio } from "@/app/info";
+import {
+  FaClock,
+  FaEnvelope,
+  FaEnvelopeCircleCheck,
+  FaLocationDot,
+} from "react-icons/fa6";
+import Card from "@/components/ui/card";
 
+export default function Contatti() {
+  return (
+    <>
+      <section className=" bg-foreground">
+        <ContentSection>
+          <span className=" text-green-500/50">risposta entro 24h</span>
+          <div className="flex flex-col gap-12 md:flex-row xl:gap-36">
+            <div className="mt-6">
+              <FadeInText>
+                <div className=" mb-8">
+                  <p className=" text-lg mb-2">Raccontaci la tua idea</p>
+                  <h1 className="text-4xl font-extralight mb-8">
+                    <span className=" font-semibold">Parliamo</span> delle tue
+                    esigenze progettuali direttamente{" "}
+                    <span className=" font-semibold">online</span>
+                  </h1>
+                  <p>
+                    Descrivici la tua idea, valuteremo insieme le migliori
+                    soluzioni progettuali per le tue necessità, tramite una
+                    consulenza preliminare gratuita, direttamente online.
+                  </p>
+                </div>
+              </FadeInText>
 
-export default function Contatti(){
-      return(
-            <>
-            <section className="  bg-white/40 dark:bg-white/1">
-                  <ContentSection>
-                        <div className="flex flex-col gap-12 md:flex-row xl:gap-36">
+              <ul className=" flex gap-4 flex-col">
+                <p>Puoi contattarci anche tramite:</p>
+                <li>
+                  <FadeInText delayMs={600}>
+                    <div className=" flex items-center">
+                      <FaEnvelope className=" text-4xl mr-4" />
 
-                              <div className="max-w-xl mt-6">
+                      <div className=" flex flex-col">
+                        <span className=" font-bold">E-mail</span>
+                        <span className=" opacity-70">{infoStudio.email}</span>
+                      </div>
+                    </div>
+                  </FadeInText>
+                </li>
 
-                                    <FadeInText>
-                                          <div>
-                                                <p className=" text-lg">Siamo qui per aiutarti</p>
-                                                <h1 className="text-4xl font-extralight mb-4 "><span className=" font-semibold">Discuss</span> your Chemical Solution Needs</h1>
-                                                <p className=" mb-8">Are you looking for top-quality chemical solution tailored to yuor needs? rpach out to us</p>
-                                          </div>
-                                    </FadeInText>
+                <li>
+                  <FadeInText delayMs={1200}>
+                    <div className=" flex items-center">
+                      <FaEnvelopeCircleCheck className=" text-4xl mr-4" />
 
-                                    <ul className=" flex gap-4 flex-col">
-                                          <li>
-                                                <FadeInText delayMs={600}>
-                                                      <div className=" flex">
-                                                            <SlEnergy/>
+                      <div className=" flex flex-col">
+                        <span className=" font-bold">PEC</span>
+                        <span className=" opacity-70">{infoStudio.pec}</span>
+                      </div>
+                    </div>
+                  </FadeInText>
+                </li>
+              </ul>
+            </div>
+            <FadeInText className="w-full flex items-center justify-center md:justify-end">
+              <Preventivo />
+            </FadeInText>
+          </div>
+        </ContentSection>
+      </section>
 
-                                                            <div className=" flex flex-col">
-                                                                  <span className=" opacity-70">E-mail</span>
-                                                                  <span>Ing.gadorante@gmail.com</span>
-                                                            </div>
-                                                      </div>
-                                                </FadeInText>
-                                          </li>
-                                          
-                                          <li>
-                                                <FadeInText delayMs={1200}>
-                                                      <div className=" flex">
-                                                            <SlEnergy/>
+      <section>
+        <ContentSection>
+          <div className="flex flex-col gap-12 md:flex-row-reverse xl:gap-36">
+            <div className="max-w-xl mt-6 text-right">
+              <FadeInText>
+                <div>
+                  <p className=" text-lg">Puoi torvarci qui</p>
+                  <h2 className="text-4xl font-extralight mb-4 ">
+                    <span className=" font-semibold">Prenota</span> un
+                    appuntamento per una consulenza in sede
+                  </h2>
+                  <p className=" mb-8">
+                    Il nostro studio è a tua disposizione per incontri e
+                    consulenze tecniche personalizzate. Prenota un appuntamento:
+                    sarà l’occasione per approfondire le tue idee e valutare
+                    insieme la strada migliore per realizzarle.
+                  </p>
+                </div>
+              </FadeInText>
 
-                                                            <div className=" flex flex-col">
-                                                                  <span className=" opacity-70">Vieni a trovarci</span>
-                                                                  <span>via S. Brigida, 3, 66036 Orsogna CH</span>
-                                                            </div>
-                                                      </div>
-                                                </FadeInText>
-                                          </li>
+              <ul className=" flex gap-4 flex-col text-start">
+                <li>
+                  <FadeInText delayMs={600}>
+                    <div className=" flex items-center">
+                      <FaClock className=" text-3xl mr-4" />
 
-                                    </ul> 
+                      <div className=" flex flex-col">
+                        <span className=" font-bold">Orari</span>
+                        <span className=" opacity-70">{infoStudio.orari}</span>
+                      </div>
+                    </div>
+                  </FadeInText>
+                </li>
 
-                              </div>
-                              <FadeInText className="w-full flex justify-center md:justify-end">
-                                    <Preventivo/>
-                              </FadeInText>
-                        </div>
-                  </ContentSection>
-            </section>
+                <li>
+                  <FadeInText delayMs={1200}>
+                    <div className=" flex items-center">
+                      <FaLocationDot className=" text-4xl mr-4" />
 
-            <section>
-                  <ContentSection>
-                        <div className=" flex flex-col items-end">
-                                      
-                              <FadeInText>
-            
-                                    <div className="max-w-2xl flex flex-col items-end text-right">
-                                          <h2  className=" mb-6">Vieni a trovarci</h2>
-                                          <p className=" max-w-xl">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Numquam accusantium explicabo ad saepe ipsa sed dolorem
-                                                deserunt, tempore quaerat! Delectus non dolore laudantium
-                                                necessitatibus quo aut, explicabo tempore iste tenetur?
-                                          </p>
-                                    </div>
-            
-                              </FadeInText>
-                        </div>
-                  </ContentSection>
-
-                  <h2>prenota un appuntamento nome cognome email</h2>
-                  <h2>richiedi un preventivo nome cognome email messaggio</h2>
-                  <h2>contattaci email pec ecc</h2>
-                  <h2>vieni a trovarci</h2>
-                  <h2>disponibilità orari</h2>
-                  
-            </section>
-            </>
-      )
+                      <div className=" flex flex-col">
+                        <span className=" font-bold">Sede</span>
+                        <span className=" opacity-70">{infoStudio.sede}</span>
+                      </div>
+                    </div>
+                  </FadeInText>
+                </li>
+              </ul>
+            </div>
+            <FadeInText className="w-full flex items-center justify-center md:justify-end">
+              <Prenotazione />
+            </FadeInText>
+          </div>
+        </ContentSection>
+      </section>
+    </>
+  );
 }

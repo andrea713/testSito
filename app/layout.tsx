@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 import OverlayCross from "@/components/Cross";
 import Footer from "@/components/ui/footer";
-
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,6 +29,7 @@ export default function RootLayout({
         {/*</OverlayCross> */}
         <Navbar/>
         {children}
+        <Toaster position="top-right" />
         <Footer/>
         
       </body>
